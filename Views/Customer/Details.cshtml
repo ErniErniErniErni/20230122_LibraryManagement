@@ -1,0 +1,22 @@
+<!-- Details.cshtml in LibraryManagement/Views/Customer folder-->
+@model List<LibraryManagement.ViewModels.CustomerViewModel>
+
+<h1>Customer</h1>
+<a href="@Url.Action("Create", "Customer")" class="btn btn-primary">Create Customer</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

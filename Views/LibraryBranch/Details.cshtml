@@ -1,0 +1,24 @@
+<!-- Details.cshtml in LibraryManagement/Views/LibraryBranch folder-->
+
+@model List<LibraryManagement.ViewModels.LibraryBranchViewModel>
+    
+<h1>Library Branches</h1>
+<a href="@Url.Action("Create", "LibraryBranch")" class="btn btn-primary">Create Branch</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Branch ID</th>
+            <th>Branch Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model)
+        {
+            <tr>
+                <td>@branch.LibraryBranchId</td>
+                <td>@branch.BranchName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
