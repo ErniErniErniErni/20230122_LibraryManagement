@@ -25,23 +25,23 @@ Instructions on how to run the application:
 
 1. Clone the repository:
 
-   ```git clone https://github.com/ErniErniErniErni/20230122_LibraryManagement.git
+   ```git clone https://github.com/ErniErniErniErni/20230122_LibraryManagement.git```
 
 2. Navigate to the project directory:
 
-   ```cd LibraryManagement
+   ```cd LibraryManagement```
 
 3. Restore dependencies:
 
-   ```dotnet restore
+   ```dotnet restore```
 
 4. Apply database migrations to create the database:
 
-   ```dotnet ef database update
+   ```dotnet ef database update```
 
 5. Start the application:
 
-   ```dotnet run
+   ```dotnet run```
 
 The application should now be running at a location similar to http://localhost:5000 (e.g.: http://localhost:5108). See terminal message for the exact URL.
 
