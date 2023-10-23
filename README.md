@@ -1,6 +1,6 @@
 # Library Management System
 
-The Library Management System is a web application for managing books, authors, and library branches. This README provides an overview of the project, installation instructions, and usage guidelines.
+The Library Management System is a web application for managing books, authors, customers, and library branches. This README provides an overview of the project, installation instructions, and usage guidelines.
 
 ## Author
 
@@ -14,7 +14,7 @@ Erni Wo
 
 ## Getting Started
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+Instructions on how to run the application:
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1. Clone the repository:
 
-   git clone https://github.com/yourusername/library-management.git
+   git clone https://github.com/ErniErniErniErni/20230122_LibraryManagement.git
 
 2. Navigate to the project directory:
 
