@@ -33,12 +33,33 @@ namespace LibraryManagement.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost]// Responds to HTTP POST requests. Submitting data to the server: Submitting a form on a web page.
+        // Data sent to the server in the HTTP POST request: Author Object
         public IActionResult Create(Author author)
         {
-            _dbContext.Authors.Add(author);       
-            _dbContext.SaveChanges();
-            return RedirectToAction("Details");
-        }  
+                _dbContext.Authors.Add(author);       
+                _dbContext.SaveChanges();
+                return RedirectToAction("Details");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int authorId)
+        {
+            try
+            {
+                var author = _dbContext.Authors.Find(authorId);
+                if (author != null)
+                {
+                    _dbContext.Authors.Remove(author);
+                    _dbContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return RedirectToAction("Details"); // Redirect to the list of authors after deletion
+        } 
     }
 }

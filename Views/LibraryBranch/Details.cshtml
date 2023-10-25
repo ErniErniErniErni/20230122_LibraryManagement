@@ -9,6 +9,7 @@
         <tr>
             <th>Branch ID</th>
             <th>Branch Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,12 @@
             <tr>
                 <td>@branch.LibraryBranchId</td>
                 <td>@branch.BranchName</td>
+                <td>
+                    <form method="post" asp-action="Delete" asp-controller="LibraryBranch">
+                        <input type="hidden" name="branchId" value="@branch.LibraryBranchId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

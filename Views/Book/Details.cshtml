@@ -10,6 +10,7 @@
             <th>Title</th>
             <th>Author Name</th>
             <th>Branch Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +21,13 @@
                 <td>@book.Title</td>
                 <td>@book.AuthorName</td>
                 <td>@book.BranchName</td>
-            </tr>
+                <td>
+                    <form method="post" asp-action="Delete" asp-controller="Book">
+                        <input type="hidden" name="bookId" value="@book.BookId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr> 
         }
     </tbody>
 </table>

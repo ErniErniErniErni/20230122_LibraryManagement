@@ -8,6 +8,7 @@
         <tr>
             <th>Customer ID</th>
             <th>Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,12 @@
             <tr>
                 <td>@customer.CustomerId</td>
                 <td>@customer.Name</td>
+                <td>
+                    <form method="post" asp-action="Delete" asp-controller="Customer">
+                        <input type="hidden" name="customerId" value="@customer.CustomerId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

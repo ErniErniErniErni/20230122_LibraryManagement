@@ -38,7 +38,8 @@ namespace LibraryManagement.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost]// Responds to HTTP POST requests. Submitting data to the server: Submitting a form on a web page.
+        // Data sent to the server in the HTTP POST request: BookViewModel Object
         public IActionResult Create(BookViewModel bookViewModel)
         {
             // Create a new Book
@@ -48,7 +49,7 @@ namespace LibraryManagement.Controllers
                 Title = bookViewModel.Title
             };
 
-            // Check if the author with the given name already exists
+            // Check if the author with the chosen name already exists
             Author author = _dbContext.Authors.FirstOrDefault(a => a.Name == bookViewModel.AuthorName);
             if (author == null)
             {
@@ -58,7 +59,7 @@ namespace LibraryManagement.Controllers
                 _dbContext.SaveChanges(); // Save the new author
             }
 
-            // Check if the branch with the given name already exists
+            // Check if the branch with the chosen name already exists
             LibraryBranch branch = _dbContext.LibraryBranches.FirstOrDefault(b => b.BranchName == bookViewModel.BranchName);
             if (branch == null)
             {
@@ -76,6 +77,26 @@ namespace LibraryManagement.Controllers
             _dbContext.SaveChanges();
 
             return RedirectToAction("Details");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int bookId)
+        {
+            try
+            {
+                var book = _dbContext.Books.Find(bookId);
+                if (book != null)
+                {
+                    _dbContext.Books.Remove(book);
+                    _dbContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return RedirectToAction("Details"); // Redirect to the list of books after deletion
         }
 
     }
